@@ -7,7 +7,7 @@
     <div>
       <table class="table table-borderless">
         <tbody>
-          <tr *ngFor="let lettersColumns of lettersGrid">
+          <tr *ngFor="let lettersColumns of termoService.grid">
             <td *ngFor="let letter of lettersColumns" [ngClass]="letter.status">
               <span>{{ letter.letter }}</span>
             </td>
