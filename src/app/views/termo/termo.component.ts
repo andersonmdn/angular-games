@@ -8,6 +8,8 @@ import { EventManager } from '@angular/platform-browser';
   styleUrls: ['./termo.component.css'],
 })
 export class TermoComponent implements OnInit {
+  public modalActive: boolean = false;
+
   constructor(
     private eventManager: EventManager,
     public termoService: TermoService
@@ -31,7 +33,9 @@ export class TermoComponent implements OnInit {
     } else if (key == 'BACKSPACE') {
       this.termoService.removeLastColumnValue();
     } else if (key == 'ENTER') {
-      this.termoService.checkAcriveRowAnswer();
+      if (this.termoService.checkAcriveRowAnswer()) {
+        this.modalActive = true;
+      }
     }
   }
 

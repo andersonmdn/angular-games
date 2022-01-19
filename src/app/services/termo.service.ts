@@ -84,7 +84,7 @@ export class TermoService {
   }
 
   private getWord() {
-    const words = ['Gabriela', 'Comida', 'Corrida', 'Carro'];
+    const words = ['Capacete', 'Comida', 'Corrida', 'Carro', 'Viagem'];
     const index = Math.floor(Math.random() * 4); //-- 0 to 3
 
     return words[index].toUpperCase();

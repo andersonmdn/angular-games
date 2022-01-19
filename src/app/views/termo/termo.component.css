@@ -71,3 +71,141 @@ td {
   background-color: #6272a4;
   border: 0;
 }
+
+.my-modal-dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-modal-content {
+  background-color: #252525;
+  border-radius: 5%;
+  width: 500px;
+  height: auto;
+}
+
+.my-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.my-modal-header h2 {
+  text-transform: uppercase;
+}
+
+.my-modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #bd3b50;
+  width: 100%;
+  padding: 0px 2rem;
+}
+
+.my-modal-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+}
+
+.my-modal-result span:first-child {
+  color: #46cc67;
+  font-size: 1.7rem;
+}
+
+.my-modal-result i {
+  font-size: 2rem;
+}
+
+.my-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  height: 300px;
+}
+
+.my-modal-footer td {
+  height: 30px;
+  width: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 30%;
+}
+
+/* .my-modal-dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-modal-content {
+  background-color: #252525;
+  border-radius: 5%;
+  width: 700px;
+  height: 700px;
+}
+
+.my-modal-dialog h2 {
+  text-transform: uppercase;
+}
+
+.my-modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #bd3b50;
+  width: 100%;
+}
+
+.my-modal-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.my-modal-result span {
+  font-weight: bold;
+}
+
+.my-modal-result span:first-child {
+  font-size: 2rem;
+}
+
+.my-modal-result span:last-child {
+  font-size: 1.5rem;
+}
+
+.my-modal-result i {
+  font-size: 2rem;
+}
+
+.my-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.my-modal-header h2 {
+  text-align: center;
+} */
+
+/* * {
+  border: 1px solid red;
+} */
