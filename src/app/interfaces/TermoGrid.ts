@@ -1,6 +1,6 @@
 interface TermoGrid {
   letter: string;
-  status: string;
+  status: 'correct' | 'locked' | 'wrong' | 'unlock' | 'close';
 }
 
 export default TermoGrid;

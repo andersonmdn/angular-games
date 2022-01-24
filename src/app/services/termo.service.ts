@@ -98,7 +98,7 @@ export class TermoService {
     answer: string,
     index: number,
     typed: string
-  ): string {
+  ): 'correct' | 'locked' | 'wrong' | 'unlock' | 'close' {
     const correctLetter = answer.substring(index, index + 1);
 
     if (correctLetter == typed) {
@@ -122,7 +122,7 @@ export class TermoService {
     numberLetters: number
   ): void {
     for (let index = 0; index < numberLetters; index++) {
-      const typedLetter = this.getGridLetter(row, index).letter;
+      const typedLetter = this.getGridColumn(row, index).letter;
       this.updateGridLetter(
         row,
         index,
@@ -136,12 +136,12 @@ export class TermoService {
     row: number,
     column: number,
     letter: string,
-    status: string
+    status: 'correct' | 'locked' | 'wrong' | 'unlock' | 'close'
   ) {
     this.grid[row][column] = { letter: letter, status: status };
   }
 
-  private getGridLetter(row: number, column: number): TermoGrid {
+  private getGridColumn(row: number, column: number): TermoGrid {
     return this.grid[row][column];
   }
 
@@ -153,5 +153,39 @@ export class TermoService {
 
   public get grid(): Array<Array<TermoGrid>> {
     return this._grid;
+  }
+
+  public getEmojiGrid(): string {
+    const emojiGrid: Array<string> = [];
+
+    for (let row = 0; row < this._grid.length; row++) {
+      let emojiRow: string = '';
+
+      for (let column = 0; column < this._grid.length; column++) {
+        const status = this.getGridColumn(row, column).status;
+
+        switch (status) {
+          case 'correct':
+            emojiRow += '🟩';
+            break;
+
+          case 'wrong':
+            emojiRow += '🟥';
+            break;
+
+          case 'close':
+            emojiRow += '🟨';
+            break;
+
+          default:
+            emojiRow += '⬛';
+            break;
+        }
+      }
+
+      emojiGrid.push(emojiRow);
+    }
+
+    return emojiGrid.join('%0A');
   }
 }

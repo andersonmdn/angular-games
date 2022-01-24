@@ -21,6 +21,14 @@ export class TermoComponent implements OnInit {
     );
   }
 
+  public shareTwitter(): string {
+    window.open(
+      `https://twitter.com/intent/tweet?text=${this.termoService.getEmojiGrid()}`,
+      '_blank'
+    );
+    return "https://twitter.com/intent/tweet?text='teste'";
+  }
+
   private keypress(e: KeyboardEvent): void {
     const key = e.key.toUpperCase();
 
