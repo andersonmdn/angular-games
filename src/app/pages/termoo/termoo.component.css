@@ -18,6 +18,8 @@
   border-radius: 20%;
   width: 50px;
   height: 50px;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .termoo-main {
@@ -25,6 +27,46 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.border-locked {
+  border-color: #44475a;
+}
+
+.border-wrong {
+  border-color: #ff5555;
+}
+
+.border-close {
+  border-color: #ffb86c;
+}
+
+.border-correct {
+  border-color: #46cc67;
+}
+
+.border-unlock {
+  border-color: #bd93f9;
+}
+
+.bg-hover-locked:hover {
+  background-color: #44475a;
+}
+
+.bg-hover-wrong:hover {
+  background-color: #ff5555;
+}
+
+.bg-hover-close:hover {
+  background-color: #ffb86c;
+}
+
+.bg-hover-correct:hover {
+  background-color: #46cc67;
+}
+
+.bg-hover-unlock:hover {
+  background-color: #bd93f9;
 }
 
 .bg-locked {

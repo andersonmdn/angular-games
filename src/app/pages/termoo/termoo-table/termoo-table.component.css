@@ -1,6 +1,7 @@
 .table {
   width: auto;
   align-self: center;
+  border-collapse: separate;
 }
 
 td {
@@ -13,7 +14,6 @@ td {
   text-align: center;
   color: #f8f8f2;
   padding: 0px;
-  background-color: #44475a;
-  border: 1px solid #282a36;
+  border: 3px solid #282a36;
   border-radius: 20%;
 }

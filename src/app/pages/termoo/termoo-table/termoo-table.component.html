@@ -4,7 +4,7 @@
       <td
         *ngFor="let letter of lettersColumns"
         [ngClass]="[
-          letter.status == 'locked' ? 'bg-locked' : '',
+          letter.status == 'locked' ? 'border-locked' : '',
           letter.status == 'wrong' ? 'bg-wrong' : '',
           letter.status == 'close' ? 'bg-close' : '',
           letter.status == 'correct' ? 'bg-correct' : '',
