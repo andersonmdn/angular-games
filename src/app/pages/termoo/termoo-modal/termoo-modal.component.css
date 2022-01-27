@@ -23,8 +23,15 @@
   border-color: #252525;
 }
 
-.modal-body {
+.modal-header.win {
+  background-color: #46cc67;
+}
+
+.modal-header.lose {
   background-color: #bd3b50;
+}
+
+.modal-body {
   border: 0px;
   display: flex;
   align-items: center;
@@ -38,14 +45,22 @@
   flex-direction: column;
 }
 
-.modal-body-card span:first-child {
+.modal-body-card span:first-child.win {
   color: #46cc67;
+}
+
+.modal-body-card span:first-child.lose {
+  color: #bd3b50;
 }
 
 .modal-footer {
   border-color: #252525;
 }
 
-.modal-footer button {
+.modal-footer .bg-twitter {
   background-color: #1d9bf0;
+}
+
+.modal-footer .bg-play-again {
+  background-color: #44475a;
 }

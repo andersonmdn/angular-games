@@ -3,15 +3,19 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TermooModalService {
-  private _games: number;
-  private _victories: number;
-  private _sequence: number;
+  private _games: number = 0;
+  private _victories: number = 0;
+  private _sequence: number = 0;
   private _localStorageService: LocalStorageService;
   private _visible: boolean = false;
 
   constructor(private localStorage: LocalStorageService) {
     this._localStorageService = localStorage;
 
+    this.loadStorageValues();
+  }
+
+  public loadStorageValues() {
     this._games = this._localStorageService.getNumber('games');
     this._victories = this._localStorageService.getNumber('victories');
     this._sequence = this._localStorageService.getNumber('sequence');

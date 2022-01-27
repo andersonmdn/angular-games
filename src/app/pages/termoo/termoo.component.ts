@@ -13,7 +13,6 @@ export class TermooComponent implements OnInit {
     public termooService: TermooService,
     private eventManager: EventManager
   ) {
-    console.log('Termoo Component - Constructor');
     this.eventManager.addEventListener(
       document.body,
       'keyup',

@@ -12,13 +12,13 @@ export class TermooService {
   private _currentAnswer: string = '';
   private _remainingAttempts: number = 0;
   private static totalAttempts: number = 5;
+  private _won: boolean = false;
 
   constructor(
     private _localStorage: LocalStorageService,
     private _termooTableService: TermooTableService,
     private _termooModalService: TermooModalService
   ) {
-    console.log('Termoo Service - Constructor');
     this.localStorage = _localStorage;
     this.termooTableService = _termooTableService;
     this.termooModalService = _termooModalService;
@@ -28,6 +28,14 @@ export class TermooService {
     } else {
       this.continueGame();
     }
+  }
+
+  public set won(value: boolean) {
+    this._won = value;
+  }
+
+  public get won() {
+    return this._won;
   }
 
   public set currentAnswer(value: string) {
@@ -77,13 +85,22 @@ export class TermooService {
   }
 
   private loadNewAnswer() {
-    const newAnswer = 'TESTE';
+    const newIndex = this.localStorage.getNumber('new_answer');
+    const newAnswer = [
+      'amor',
+      'mais',
+      'vida',
+      'logo',
+      'tudo',
+      'isso',
+      'show',
+      'cena',
+    ][newIndex];
 
     this.currentAnswer = newAnswer;
   }
 
   public newGame() {
-    console.log('Termoo Service - Inicio do um Novo Jogo');
     this.loadNewAnswer();
     this.loadNewRemainingAttempts();
     this.initializeGame();
@@ -91,7 +108,6 @@ export class TermooService {
   }
 
   public continueGame() {
-    console.log('Termoo Service - Continuar do um Jogo');
     this.loadStorageAnswer();
     this.loadStorageRemainingAttempts();
     this.initializeGame();
@@ -125,6 +141,8 @@ export class TermooService {
     }
 
     this.termooTableService.setActiveRow(activeRow);
+    this.termooModalService.visible = false;
+    this.termooModalService.loadStorageValues();
   }
 
   public newEntry(key: string) {
@@ -185,7 +203,6 @@ export class TermooService {
     }
 
     words.push(fullWord);
-    console.log(words, fullWord);
 
     this.localStorage.set('words', words);
   }
@@ -199,13 +216,14 @@ export class TermooService {
   }
 
   private win() {
-    console.log('Vitória');
-
     this.localStorage.increment('games');
     this.localStorage.increment('victories');
     this.localStorage.increment('sequence');
     this.localStorage.set('in_game', 0);
+    this.localStorage.increment('new_answer');
+    this.won = true;
 
+    this.termooModalService.loadStorageValues();
     this.termooModalService.toggle();
   }
 
@@ -213,8 +231,10 @@ export class TermooService {
     this.localStorage.increment('games');
     this.localStorage.set('sequence', 1);
     this.localStorage.set('in_game', 0);
+    this.localStorage.increment('new_answer');
+    this.won = false;
 
+    this.termooModalService.loadStorageValues();
     this.termooModalService.toggle();
-    console.log('Derrota');
   }
 }

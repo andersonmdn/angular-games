@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { TermooService } from './../termoo.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { TermooModalService } from './termoo-modal.service';
 
@@ -8,7 +9,18 @@ import { TermooModalService } from './termoo-modal.service';
   styleUrls: ['./termoo-modal.component.css'],
 })
 export class TermooModalComponent implements OnInit {
-  constructor(public termooModalService: TermooModalService) {}
+  @Input() win: boolean = false;
+
+  constructor(
+    public termooModalService: TermooModalService,
+    public termooService: TermooService
+  ) {
+    this.win = true;
+  }
+
+  public playAgain() {
+    this.termooService.newGame();
+  }
 
   ngOnInit(): void {}
 }

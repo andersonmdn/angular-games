@@ -67,7 +67,7 @@ export class TermooTableService {
   public removeLastLetter() {
     const indexRow = this.activeRow;
     const fillColumn = this.getEmptyColumnIndex() - 1;
-    const indexColumn = fillColumn >= 0 ? fillColumn : this.table.length - 1;
+    const indexColumn = fillColumn >= 0 ? fillColumn : this.table[0].length - 1;
 
     if (indexColumn >= 0) {
       this.table[indexRow][indexColumn] = this.getUpdatedColumn(
