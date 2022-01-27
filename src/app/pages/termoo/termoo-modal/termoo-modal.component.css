@@ -64,3 +64,25 @@
 .modal-footer .bg-play-again {
   background-color: #44475a;
 }
+
+@media (max-width: 550px) {
+  .modal-dialog {
+    max-width: 400px !important;
+  }
+
+  .modal-content {
+    min-width: auto;
+    max-width: 390px;
+  }
+
+  .modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .modal-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}

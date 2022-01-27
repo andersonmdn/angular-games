@@ -94,6 +94,23 @@ export class TermooTableService {
     return updatedColumn;
   }
 
+  public getEmojiTable(): string {
+    const emojiTable: Array<string> = this.table.map((row) => {
+      return row
+        .map((column) => {
+          if (column.status == 'correct') return '🟩';
+          if (column.status == 'wrong') return '🟥';
+          if (column.status == 'close') return '🟨';
+          return '⬛';
+        })
+        .join('');
+    });
+
+    const emojiTableString = emojiTable.join('%0A');
+
+    return emojiTableString;
+  }
+
   public updateColumnStatus() {
     const indexRow = this.activeRow;
 
