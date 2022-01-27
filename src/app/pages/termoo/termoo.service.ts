@@ -237,4 +237,8 @@ export class TermooService {
     this.termooModalService.loadStorageValues();
     this.termooModalService.toggle();
   }
+
+  public getEmojiTable(): string {
+    return this.termooTableService.getEmojiTable();
+  }
 }

@@ -1,6 +1,6 @@
 import { TermooTableService } from './../termoo-table/termoo-table.service';
 import { TermooService } from './../termoo.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { TermooModalService } from './termoo-modal.service';
 
@@ -11,26 +11,22 @@ import { TermooModalService } from './termoo-modal.service';
 })
 export class TermooModalComponent implements OnInit {
   @Input() win: boolean = false;
+  @Output() eventPlayAgain = new EventEmitter();
+  @Output() eventShareTwitter = new EventEmitter();
 
   constructor(
     public termooModalService: TermooModalService,
-    public termooService: TermooService,
     private termooTableService: TermooTableService
   ) {
     this.win = true;
   }
 
   public playAgain() {
-    this.termooService.newGame();
+    this.eventPlayAgain.emit();
   }
 
   public shareTwitter() {
-    const data = this.termooTableService.getEmojiTable();
-
-    window.open(
-      `https://twitter.com/intent/tweet?text=Joguei minha versão do jogo term.ooo %0A${data}%0A https://github.com/andersonmdn/angular-games `,
-      '_blank'
-    );
+    this.eventShareTwitter.emit();
   }
 
   ngOnInit(): void {}
