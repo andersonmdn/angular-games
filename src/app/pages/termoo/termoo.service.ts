@@ -3,6 +3,7 @@ import { TermooTableService } from './termoo-table/termoo-table.service';
 import { Injectable } from '@angular/core';
 
 import { LocalStorageService } from './../../core/services/local-storage.service';
+import AnswerList from 'src/app/core/interfaces/AnswerList';
 
 @Injectable()
 export class TermooService {
@@ -39,7 +40,10 @@ export class TermooService {
   }
 
   public set currentAnswer(value: string) {
-    const formatedValue = value.toUpperCase();
+    const formatedValue = value
+      .normalize('NFD')
+      .replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
+      .toUpperCase();
 
     this._currentAnswer = formatedValue;
     this.termooTableService.rightAnswer = this._currentAnswer;
@@ -86,16 +90,7 @@ export class TermooService {
 
   private loadNewAnswer() {
     const newIndex = this.localStorage.getNumber('new_answer');
-    const newAnswer = [
-      'amor',
-      'mais',
-      'vida',
-      'logo',
-      'tudo',
-      'isso',
-      'show',
-      'cena',
-    ][newIndex];
+    const newAnswer = AnswerList[newIndex];
 
     this.currentAnswer = newAnswer;
   }
