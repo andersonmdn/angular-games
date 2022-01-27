@@ -1,6 +1,6 @@
-interface TermoGrid {
+interface TermoTable {
   letter: string;
   status: 'correct' | 'locked' | 'wrong' | 'unlock' | 'close';
 }
 
-export default TermoGrid;
+export default TermoTable;

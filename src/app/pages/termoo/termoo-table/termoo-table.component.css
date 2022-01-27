@@ -1,0 +1,19 @@
+.table {
+  width: auto;
+  align-self: center;
+}
+
+td {
+  height: 60px;
+  width: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+  color: #f8f8f2;
+  padding: 0px;
+  background-color: #44475a;
+  border: 1px solid #282a36;
+  border-radius: 20%;
+}

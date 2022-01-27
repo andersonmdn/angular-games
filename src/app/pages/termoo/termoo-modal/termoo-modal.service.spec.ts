@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TermoService } from './termo.service';
+import { TermooModalService } from './termoo-modal.service';
 
-describe('TermoService', () => {
-  let service: TermoService;
+describe('TermooModalService', () => {
+  let service: TermooModalService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TermoService);
+    service = TestBed.inject(TermooModalService);
   });
 
   it('should be created', () => {

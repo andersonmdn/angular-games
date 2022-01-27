@@ -1,0 +1,41 @@
+.termoo {
+  height: 80%;
+  position: relative;
+}
+
+.termoo-header {
+  text-align: center;
+  padding: 2rem;
+}
+
+.termoo-header span {
+  padding: 0rem 1rem;
+  border-radius: 20%;
+}
+
+.termoo-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.bg-locked {
+  background-color: #44475a;
+}
+
+.bg-wrong {
+  background-color: #ff5555;
+}
+
+.bg-close {
+  background-color: #ffb86c;
+}
+
+.bg-correct {
+  background-color: #46cc67;
+}
+
+.bg-unlock {
+  background-color: #bd93f9;
+}

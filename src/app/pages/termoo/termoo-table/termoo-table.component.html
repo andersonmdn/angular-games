@@ -1,0 +1,18 @@
+<table class="table table-borderless">
+  <tbody>
+    <tr *ngFor="let lettersColumns of termooService.getTermooTable()">
+      <td
+        *ngFor="let letter of lettersColumns"
+        [ngClass]="[
+          letter.status == 'locked' ? 'bg-locked' : '',
+          letter.status == 'wrong' ? 'bg-wrong' : '',
+          letter.status == 'close' ? 'bg-close' : '',
+          letter.status == 'correct' ? 'bg-correct' : '',
+          letter.status == 'unlock' ? 'bg-unlock' : ''
+        ]"
+      >
+        <span>{{ letter.letter }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

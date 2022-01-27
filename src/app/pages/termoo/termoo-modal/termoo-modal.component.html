@@ -1,0 +1,34 @@
+<div class="termo-modal text-white" *ngIf="termooModalService.visible">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="fs-2 fw-bold modal-title">Vitória</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-card">
+          <span class="fw-bold fs-4">{{ termooModalService.games }}</span>
+          <span>Jogos</span>
+          <i class="bi bi-keyboard-fill fs-1"></i>
+        </div>
+        <div class="modal-body-card">
+          <span class="fw-bold fs-4"
+            >{{ termooModalService.percentageWins() }}%</span
+          >
+          <span>Vitórias</span>
+          <i class="bi bi-trophy-fill fs-1"></i>
+        </div>
+        <div class="modal-body-card">
+          <span class="fw-bold fs-4">{{ termooModalService.sequence }}</span>
+          <span>Sequencia</span>
+          <i class="bi bi-award-fill fs-1"></i>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn text-white">
+          <i class="bi bi-twitter"></i>
+          Compartilhar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

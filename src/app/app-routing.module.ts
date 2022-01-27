@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TermoComponent } from './views/termo/termo.component';
+import { TermooComponent } from './pages/termoo/termoo.component';
 
-const routes: Routes = [{ path: 'termo', component: TermoComponent }];
+const routes: Routes = [{ path: '', component: TermooComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

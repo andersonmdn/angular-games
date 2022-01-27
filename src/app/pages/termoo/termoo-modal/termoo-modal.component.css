@@ -1,0 +1,51 @@
+.termo-modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282a36d8;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #252525;
+  min-width: 500px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #252525;
+}
+
+.modal-body {
+  background-color: #bd3b50;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal-body-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-body-card span:first-child {
+  color: #46cc67;
+}
+
+.modal-footer {
+  border-color: #252525;
+}
+
+.modal-footer button {
+  background-color: #1d9bf0;
+}

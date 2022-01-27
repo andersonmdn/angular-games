@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TermoComponent } from './termo.component';
+import { TermooComponent } from './termoo.component';
 
-describe('TermoComponent', () => {
-  let component: TermoComponent;
-  let fixture: ComponentFixture<TermoComponent>;
+describe('TermooComponent', () => {
+  let component: TermooComponent;
+  let fixture: ComponentFixture<TermooComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TermoComponent ]
+      declarations: [ TermooComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TermoComponent);
+    fixture = TestBed.createComponent(TermooComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
