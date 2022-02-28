@@ -8,7 +8,7 @@ Jogos replicados no projeto:
 
 ## Termoo
 
-Jogo inspirado no jogo [term.ooo](https://term.ooo). 🚧 Em Desenvolvimento!! 🚧
+Jogo inspirado no jogo [term.ooo](https://term.ooo).
 
 ### Como o jogo funciona
 

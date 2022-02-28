@@ -1,0 +1,21 @@
+<div class="memo">
+  <!-- <div class="scoreboard text-white">
+    <div>Tentativas: 0</div>
+  </div> -->
+  <div class="grid">
+    <div
+      *ngFor="let memo of memos; let i = index"
+      [ngClass]="['flip-container', memo.active ? 'active' : '']"
+      (click)="flipCard(i)"
+    >
+      <div class="flipper">
+        <div class="front">
+          <img src="../../../assets/angular.png" alt="" />
+        </div>
+        <div [ngClass]="['back', memo.right ? 'right' : '']">
+          <img [src]="memo.image" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

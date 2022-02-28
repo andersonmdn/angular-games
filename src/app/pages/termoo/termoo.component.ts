@@ -6,7 +6,7 @@ import { EventManager } from '@angular/platform-browser';
 @Component({
   selector: 'app-termoo',
   templateUrl: './termoo.component.html',
-  styleUrls: ['./termoo.component.css'],
+  styleUrls: ['./termoo.component.less'],
 })
 export class TermooComponent implements OnInit {
   constructor(
