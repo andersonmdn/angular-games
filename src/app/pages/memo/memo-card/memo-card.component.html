@@ -1,0 +1,11 @@
+<div [ngClass]="['card-container', 'animated', memo.active ? 'active' : '']">
+  <div class="card-flipper">
+    <div class="back">
+      <!-- <img src="../../../assets/angular.png" alt="" /> -->
+      <span>MEMO</span>
+    </div>
+    <div [ngClass]="['front', memo.right ? 'right' : '']">
+      <img [src]="memo.image" alt="" />
+    </div>
+  </div>
+</div>

@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface memoCard {
-  image: string;
-  active: boolean;
-  right: boolean;
-}
+import { Memo } from './memo';
 
 @Component({
   selector: 'app-memo',
@@ -12,7 +8,7 @@ interface memoCard {
   styleUrls: ['./memo.component.less'],
 })
 export class MemoComponent implements OnInit {
-  memos: Array<memoCard> = [];
+  memos: Array<Memo> = [];
   //firstMemo: number = -1;
   //lastMemo: number = -1;
   queue: Array<number> = [];
@@ -58,18 +54,18 @@ export class MemoComponent implements OnInit {
 
   ngOnInit(): void {
     let images = [
-      '../../../assets/Aku-Aku.png',
-      '../../../assets/Hollow-0.png',
-      '../../../assets/Link_Sword.png',
-      '../../../assets/linux.png',
-      '../../../assets/gira-sol.png',
-      '../../../assets/mario-verde.png',
-      '../../../assets/mario-vermelho.png',
-      '../../../assets/Morgana.png',
-      '../../../assets/planta-mario.png',
-      '../../../assets/Under.png',
-      '../../../assets/yoche.png',
-      '../../../assets/Frog_CT.png',
+      '../../../../assets/Aku-Aku.png',
+      '../../../../assets/Hollow-0.png',
+      '../../../../assets/Link_Sword.png',
+      '../../../../assets/linux.png',
+      '../../../../assets/gira-sol.png',
+      '../../../../assets/mario-verde.png',
+      '../../../../assets/mario-vermelho.png',
+      '../../../../assets/Morgana.png',
+      '../../../../assets/planta-mario.png',
+      '../../../../assets/Under.png',
+      '../../../../assets/yoche.png',
+      '../../../../assets/Frog_CT.png',
     ];
 
     for (const image of images) {
