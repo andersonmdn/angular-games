@@ -9,65 +9,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.modal-content {
-  background-color: #252525;
-  min-width: 500px;
-}
+  .modal-dialog {
+    width: 100%;
 
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-color: #252525;
-}
+    .modal-content {
+      background-color: #252525;
 
-.modal-header.win {
-  background-color: #46cc67;
-}
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-color: #252525;
 
-.modal-header.lose {
-  background-color: #bd3b50;
-}
+        &.win {
+          background-color: #46cc67;
+        }
 
-.modal-body {
-  border: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+        &.lose {
+          background-color: #bd3b50;
+        }
+      }
+    }
 
-.modal-body-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+    .modal-body {
+      border: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
 
-.modal-body-card span:first-child.win {
-  color: #46cc67;
-}
+      .modal-body-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
-.modal-body-card span:first-child.lose {
-  color: #bd3b50;
-}
+        span:first-child.win {
+          color: #46cc67;
+        }
 
-.modal-footer {
-  border-color: #252525;
-}
+        span:first-child.lose {
+          color: #bd3b50;
+        }
+      }
+    }
 
-.modal-footer .bg-twitter {
-  background-color: #1d9bf0;
-}
+    .modal-footer {
+      border-color: #252525;
 
-.modal-footer .bg-play-again {
-  background-color: #44475a;
+      .bg-twitter {
+        background-color: #1d9bf0;
+      }
+
+      .bg-play-again {
+        background-color: #44475a;
+      }
+    }
+  }
 }
 
 @media (max-width: 550px) {
   .modal-dialog {
-    max-width: 400px !important;
+    max-width: 700px;
   }
 
   .modal-content {

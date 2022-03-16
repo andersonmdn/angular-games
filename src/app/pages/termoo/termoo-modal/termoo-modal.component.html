@@ -1,36 +1,36 @@
 <div class="termo-modal text-white" *ngIf="termooModalService.visible">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div [ngClass]="['modal-header', win ? 'win' : 'lose']">
-        <h2 *ngIf="win" class="fs-2 fw-bold modal-title text-white">
+        <h2 *ngIf="win" class="fs-1 fw-bold modal-title text-white">
           <i class="bi bi-emoji-smile fs-1"></i>
           Vitória
         </h2>
-        <h2 *ngIf="!win" class="fs-2 fw-bold modal-title text-white">
+        <h2 *ngIf="!win" class="fs-1 fw-bold modal-title text-white">
           <i class="bi bi-emoji-frown fs-1"></i>
           Derrota
         </h2>
       </div>
       <div class="modal-body">
         <div class="modal-body-card">
-          <span [ngClass]="['fw-bold', 'fs-4', win ? 'win' : 'lose']">{{
+          <span [ngClass]="['fw-bold', 'fs-1', win ? 'win' : 'lose']">{{
             termooModalService.games
           }}</span>
-          <span>Jogos</span>
+          <span class="fs-3">Jogos</span>
           <i class="bi bi-keyboard-fill fs-1"></i>
         </div>
         <div class="modal-body-card">
-          <span [ngClass]="['fw-bold', 'fs-4', win ? 'win' : 'lose']"
+          <span [ngClass]="['fw-bold', 'fs-1', win ? 'win' : 'lose']"
             >{{ termooModalService.percentageWins() }}%</span
           >
-          <span>Vitórias</span>
+          <span class="fs-3">Vitórias</span>
           <i class="bi bi-trophy-fill fs-1"></i>
         </div>
         <div class="modal-body-card">
-          <span [ngClass]="['fw-bold', 'fs-4', win ? 'win' : 'lose']">{{
+          <span [ngClass]="['fw-bold', 'fs-1', win ? 'win' : 'lose']">{{
             termooModalService.sequence
           }}</span>
-          <span>Sequência</span>
+          <span class="fs-3">Sequência</span>
           <i class="bi bi-award-fill fs-1"></i>
         </div>
       </div>
