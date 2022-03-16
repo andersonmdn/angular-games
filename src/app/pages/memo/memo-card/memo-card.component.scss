@@ -1,0 +1,79 @@
+@use "sass:color";
+
+@import "../../../core/styles/colors";
+@import "../../../core/styles/common";
+
+$border: 15px;
+
+.card-container {
+  @include display-flex();
+  border-radius: $border;
+  height: 150px;
+  perspective: 1000px;
+  transition: transform 0.5s cubic-bezier(0.25, -1.42, 0.28, 1.43);
+  width: 100px;
+
+  &.active {
+    .card-flipper {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .card-flipper {
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    width: 100%;
+
+    .back {
+      background-color: $color-dark;
+      border: 1px solid color.scale($color-dark, $lightness: 10%);
+      overflow: hidden;
+
+      span {
+        border-radius: $border;
+        border: 1px solid color.scale($color-dark, $lightness: 30%);
+        color: $color-white;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        left: 50%;
+        padding: 0.5rem 2rem;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(-30deg);
+      }
+
+      div {
+        bottom: 15px;
+        height: 2px;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .front {
+      background-color: $color-dark;
+      transform: rotateY(180deg);
+
+      &.right {
+        background-color: $color-green;
+      }
+    }
+
+    .front,
+    .back {
+      @include display-flex();
+      backface-visibility: hidden;
+      border-radius: $border;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+
+      img {
+        width: 90px;
+      }
+    }
+  }
+}

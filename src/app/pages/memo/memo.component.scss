@@ -1,65 +1,60 @@
-@childs: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24;
+@import "../../core/styles/colors";
+@import "../../core/styles/common";
+
+$border: 15px;
 
 .memo {
+  @include display-flex(column);
   height: 100vh;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .game-config {
-  position: fixed;
-  width: auto;
-
-  z-index: 1;
-  border-radius: 15px;
-
+  border-radius: $border;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 50px;
   grid-row-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  position: fixed;
+  width: auto;
+  z-index: 1;
 
   .config-card {
-    border-radius: 1rem;
-    min-width: 250px;
+    @include display-flex(row);
+    border-radius: $border;
     min-height: 370px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 250px;
     position: relative;
 
     &:nth-child(1) {
-      background-color: #46cc67;
-      color: #46cc67;
+      background-color: $color-green;
+      color: $color-green;
 
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
-        10px 0px 13px -7px #000000, 10px 9px 0px -1px #46cc67;
+        10px 0px 13px -7px #000000, 10px 9px 0px -1px $color-green;
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-        10px 9px 0px -1px #46cc67;
+        10px 9px 0px -1px $color-green;
     }
 
     &:nth-child(2) {
-      background-color: #ffb86c;
-      color: #ffb86c;
+      background-color: $color-yellow;
+      color: $color-yellow;
 
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
-        10px 0px 13px -7px #000000, 10px 9px 0px -1px #ffb86c;
+        10px 0px 13px -7px #000000, 10px 9px 0px -1px $color-yellow;
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-        10px 9px 0px -1px #ffb86c;
+        10px 9px 0px -1px $color-yellow;
     }
 
     &:nth-child(3) {
-      background-color: #ff5555;
-      color: #ff5555;
+      background-color: $color-red;
+      color: $color-red;
 
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
-        10px 0px 13px -7px #000000, 10px 9px 0px -1px #ff5555;
+        10px 0px 13px -7px #000000, 10px 9px 0px -1px $color-red;
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-        10px 9px 0px -1px #ff5555;
+        10px 9px 0px -1px $color-red;
     }
 
     &:hover {
@@ -67,15 +62,15 @@
         span:nth-child(2) {
           font-size: 6rem;
           -webkit-text-stroke-width: 3px;
-          -webkit-text-stroke-color: #44475a;
-          color: #44475a;
+          -webkit-text-stroke-color: $color-dark;
+          color: $color-dark;
         }
       }
     }
 
     .decorator {
       position: absolute;
-      color: #44475a;
+      color: $color-dark;
       font-size: 2.5rem;
       &:nth-child(1) {
         left: 5px;
@@ -97,18 +92,18 @@
       text-align: center;
       width: 70%;
       height: 70%;
-      border-radius: 1rem;
-      //border: 2px solid #44475a;
+      border-radius: $border;
+      //border: 2px solid $color-dark;
 
       span:nth-child(1) {
         font-size: 2.5rem;
-        color: #44475a;
+        color: $color-dark;
       }
 
       span:nth-child(2) {
         font-size: 6rem;
         -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: #44475a;
+        -webkit-text-stroke-color: $color-dark;
         /* Firefox */
         -moz-transition: color 0.25s ease-in;
         /* WebKit */
@@ -120,34 +115,12 @@
 
         span:nth-child(1) {
           font-size: 2.5rem;
-          color: #44475a;
+          color: $color-dark;
           margin-left: 0.5rem;
         }
       }
     }
   }
-}
-
-.transform-translateY(@value) {
-  -webkit-transform: translateY(@value);
-  -moz-transform: translateY(@value);
-  -ms-transform: translateY(@value);
-  -o-transform: translateY(@value);
-  transform: translateY(@value);
-}
-
-.transform-translateX(@value) {
-  -webkit-transform: translateX(@value);
-  -moz-transform: translateX(@value);
-  -ms-transform: translateX(@value);
-  -o-transform: translateX(@value);
-  transform: translateX(@value);
-}
-
-.transition-delay(@value) {
-  -webkit-transition-delay: @value;
-  -moz-transition-delay: @value;
-  transition-delay: @value;
 }
 
 .grid {

@@ -5,7 +5,7 @@ import { Memo } from '../memo';
 @Component({
   selector: 'app-memo-card',
   templateUrl: './memo-card.component.html',
-  styleUrls: ['./memo-card.component.less'],
+  styleUrls: ['./memo-card.component.scss'],
 })
 export class MemoCardComponent implements OnInit {
   @Input() memo: Memo = { image: '', active: false, right: false };

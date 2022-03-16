@@ -1,5 +1,5 @@
 <div class="memo">
-  <!-- <div class="game-config text-white">
+  <div class="game-config text-white">
     <div class="fw-bold config-card">
       <div class="inside">
         <span>
@@ -27,7 +27,7 @@
         <span>36<span>x</span></span>
       </div>
     </div>
-  </div> -->
+  </div>
   <div class="grid">
     <div *ngFor="let memo of memos; let i = index" (click)="flipCard(i)">
       <app-memo-card [memo]="memo"></app-memo-card>

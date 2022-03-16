@@ -5,7 +5,7 @@ import { Memo } from './memo';
 @Component({
   selector: 'app-memo',
   templateUrl: './memo.component.html',
-  styleUrls: ['./memo.component.less'],
+  styleUrls: ['./memo.component.scss'],
 })
 export class MemoComponent implements OnInit {
   memos: Array<Memo> = [];

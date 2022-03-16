@@ -7,7 +7,7 @@ import { TermooModalService } from './termoo-modal.service';
 @Component({
   selector: 'app-termoo-modal',
   templateUrl: './termoo-modal.component.html',
-  styleUrls: ['./termoo-modal.component.less'],
+  styleUrls: ['./termoo-modal.component.scss'],
 })
 export class TermooModalComponent implements OnInit {
   @Input() win: boolean = false;
