@@ -1,3 +1,4 @@
+import { HomeModule } from './pages/home/home.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,7 +10,13 @@ import { TermooModule } from './pages/termoo/termoo.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, TermooModule, MemoModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TermooModule,
+    MemoModule,
+    HomeModule,
+  ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent],
 })
