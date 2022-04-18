@@ -1,36 +1,181 @@
 @import "../../core/styles/colors";
 @import "../../core/styles/common";
 
+$color-dark-2: #21222c;
+
 .home {
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 250px 250px 250px 250px 250px 250px;
-  grid-template-rows: 250px 250px 250px;
-  column-gap: 40px;
-  row-gap: 20px;
-  padding: 2rem;
+  color: $color-white;
 
-  a {
-    @include display-flex(column);
-    text-align: center;
-    border-radius: 16px;
-    background-image: none;
-    background-color: #44475a;
-    -webkit-box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.59);
-    box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.59);
+  .my-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    background-color: $color-dark-2;
+    -webkit-box-shadow: 0px 7px 5px 0px rgba(36, 35, 36, 1);
+    -moz-box-shadow: 0px 7px 5px 0px rgba(36, 35, 36, 1);
+    box-shadow: 0px 7px 5px 0px rgba(36, 35, 36, 1);
 
-    text-decoration: none;
-
-    span {
-      display: block;
-      color: white;
-      &:nth-child(1) {
-        font-size: 2.5rem;
-      }
-      &:nth-child(2) {
-        font-size: 1.5rem;
+    ul {
+      @include display-flex();
+      margin-bottom: 0px;
+      li {
+        margin-left: 2rem;
+        list-style-type: none;
+        text-transform: uppercase;
       }
     }
   }
+
+  main {
+    @include display-flex(column);
+    color: $color-white;
+
+    .resume {
+      @include display-flex();
+      min-height: 600px;
+      width: 95%;
+
+      .resume-image {
+        @include display-flex();
+        width: 45%;
+      }
+
+      .resume-body {
+        height: 100%;
+        padding: 6rem;
+        width: 45%;
+
+        .title-hello {
+          font-size: 1.6rem;
+          text-transform: uppercase;
+        }
+
+        .title {
+          font-size: 3.5rem;
+          text-transform: uppercase;
+
+          span {
+            color: $color-red;
+          }
+        }
+
+        .descriptions {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .description {
+            font-size: 1.5rem;
+          }
+        }
+
+        .buttons {
+          margin-top: 1rem;
+          button {
+            background: transparent;
+            border-radius: 4px;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            width: 175px;
+
+            &.download-clv {
+              background: $color-red;
+              color: $color-white;
+            }
+
+            &.contact {
+              border: 1px solid $color-red;
+              color: $color-white;
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .about-me {
+      @include display-flex(column);
+      min-height: 500px;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 1200px;
+
+        .about-me-image {
+          border-radius: 150px;
+          height: 175px;
+        }
+
+        .about-me-description {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          width: 60%;
+        }
+      }
+    }
+
+    .projects {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .projects-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 50px;
+        margin-top: 2rem;
+
+        .project {
+          width: 350px;
+          height: 400px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          padding: 2rem;
+          background-color: $color-dark-2;
+          border-radius: 25px;
+          position: relative;
+
+          .project-description {
+            position: absolute;
+            display: none;
+            bottom: 0;
+            padding: 2rem;
+            background: #44475a;
+            width: 100%;
+            height: 320px;
+            border-radius: 0px 0px 25px 25px;
+          }
+
+          &:hover {
+            img {
+              display: none;
+            }
+            .project-description {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.thomson-reuters {
+  color: #ff7f00;
+  font-weight: bold;
 }

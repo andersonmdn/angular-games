@@ -9,11 +9,24 @@ $border: 15px;
   position: relative;
 }
 
+.scoreboard {
+  position: fixed;
+  top: 0.5rem;
+  color: $color-white;
+
+  .right {
+    color: $color-green;
+  }
+  .wrong {
+    color: $color-purple;
+  }
+}
+
 .grid {
   position: relative;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;

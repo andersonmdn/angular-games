@@ -43,6 +43,13 @@ $border: 15px;
         text-align: center;
         top: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(-30deg);
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
       }
 
       div {
@@ -56,7 +63,13 @@ $border: 15px;
     .front {
       background-color: $color-dark;
       transform: rotateY(180deg);
-
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
       &.right {
         background-color: $color-green;
       }

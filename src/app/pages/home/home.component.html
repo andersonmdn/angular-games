@@ -1,10 +1,92 @@
 <div class="home">
-  <a [routerLink]="['/memo']">
+  <header>
+    <nav class="my-navbar">
+      <h1>Portifólio</h1>
+      <ul>
+        <li>Sobre mim</li>
+        <li>Projetos</li>
+        <li>Sobre Mim</li>
+        <li>Serviços</li>
+        <li>Minhas Skills</li>
+        <li>Contato</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="resume">
+      <div class="resume-body">
+        <span class="title-hello">Olá,</span>
+        <h2 class="title">Meu nome é <span>Anderson</span></h2>
+        <div class="descriptions">
+          <span class="description">Desenvolvedor de Software Senior</span>
+          <span class="description">Migrando para Desenvolvedor Front-end</span>
+        </div>
+        <div class="buttons">
+          <button class="download-clv">Download CLV</button>
+          <button class="contact">Contato</button>
+        </div>
+      </div>
+      <div class="resume-image">
+        <img src="../../../assets/home-angular-dev.png" alt="" />
+      </div>
+    </section>
+    <section class="about-me">
+      <h2>SOBRE MIM</h2>
+      <div>
+        <img class="about-me-image" src="../../../assets/man.svg" alt="" />
+        <div class="about-me-description">
+          <span>
+            Eu trabalho como desenvolvedor de software desktop a mais de 7 anos
+            na
+            <span class="thomson-reuters">Thomson Reuters</span>.
+          </span>
+          <span>
+            Estou envolvido com programação desde 2012 por meio de cursos
+            presenciais e online. Atuo na área de tecnologia da informação, com
+            análise e/ou desenvolvimento de sistemas desktop desde 2013.
+          </span>
+          <span>
+            Frequentemente procuro o meu auto-aperfeiçoamento como
+            desenvolvedor, finalizei meu diploma de graduação e estou estudando
+            desenvolvimento web e novos idiomas em cursos on-line.
+          </span>
+        </div>
+      </div>
+    </section>
+    <section class="projects">
+      <h2>PROJETOS</h2>
+      <div class="projects-content">
+        <div class="project memo">
+          <h3>MEMO</h3>
+          <img src="../../../assets/memo_.svg" alt="" />
+          <span class="project-description">
+            O jogo da memória é um clássico jogo formado por peças que
+            apresentam uma figura em um dos lados. Cada figura se repete em duas
+            peças diferentes. O jogador deve virar duas peças. Caso as figuras
+            sejam iguais, elas devem permanecer vidaras e o jogador deve jogar
+            novamente. Se forem peças diferentes, estas devem ser viradas
+            novamente.
+          </span>
+        </div>
+        <div class="project">
+          <h3>TERMOO</h3>
+          <img src="../../../assets/termo_.svg" alt="" />
+          <span class="project-description">
+            Descrubra a palavra certa em 5 tentativas. Depois de cada tentativa,
+            as peças mostram o quão perto você esta da solução. Inspirado no
+            jogo termo.ooo.
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>Footer</footer>
+  <!-- <a [routerLink]="['/memo']">
     <span>MEMO</span>
     <span>Jogo da Memória</span>
   </a>
   <a [routerLink]="['/termoo']">
     <span>TERMOO</span>
     <span>Jogo de Palavras</span>
-  </a>
+  </a> -->
 </div>

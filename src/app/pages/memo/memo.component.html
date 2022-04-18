@@ -1,4 +1,8 @@
 <div class="memo">
+  <div class="scoreboard">
+    <span class="right"> Acertos: {{ right }} </span>
+    <span class="wrong"> Erros: {{ wrong }} </span>
+  </div>
   <div class="grid">
     <div *ngFor="let memo of memos; let i = index" (click)="flipCard(i)">
       <app-memo-card [memo]="memo"></app-memo-card>

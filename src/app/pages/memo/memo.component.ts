@@ -8,6 +8,8 @@ import { Memo } from './memo';
   styleUrls: ['./memo.component.scss'],
 })
 export class MemoComponent implements OnInit {
+  right: number = 0;
+  wrong: number = 0;
   memos: Array<Memo> = [];
   //firstMemo: number = -1;
   //lastMemo: number = -1;
@@ -34,7 +36,9 @@ export class MemoComponent implements OnInit {
         this.queue.shift();
         this.queue.shift();
         console.log(this.memos);
+        this.right++;
       } else {
+        this.wrong++;
         setTimeout(() => {
           if (this.queue.length >= 2) {
             this.memos[this.queue[0]].active = false;
@@ -55,6 +59,10 @@ export class MemoComponent implements OnInit {
   ngOnInit(): void {
     let images = [
       '../../../../assets/Aku-Aku.png',
+      '../../../../assets/Chibiterasu.png',
+      '../../../../assets/crash.png',
+      '../../../../assets/Hollow-1.png',
+      '../../../../assets/Red_XIII.png',
       '../../../../assets/Hollow-0.png',
       '../../../../assets/Link_Sword.png',
       '../../../../assets/linux.png',
@@ -65,14 +73,28 @@ export class MemoComponent implements OnInit {
       '../../../../assets/planta-mario.png',
       '../../../../assets/Under.png',
       '../../../../assets/yoche.png',
-      '../../../../assets/Frog_CT.png',
+      '../../../../assets/bmo.png',
+      '../../../../assets/crono_2.png',
+      '../../../../assets/kirby_sword.png',
+      '../../../../assets/wisp_poke.png',
+      '../../../../assets/sif.png',
+      '../../../../assets/squid_vodoo.png',
+      '../../../../assets/panda.png',
+      '../../../../assets/picolo.png',
+      '../../../../assets/simba.png',
+      '../../../../assets/scar.png',
+      '../../../../assets/meowth.png',
+      '../../../../assets/gumball.png',
+      '../../../../assets/scooby-doo.png',
+      '../../../../assets/garfield.png',
+      '../../../../assets/thanos.png',
     ];
 
     for (const image of images) {
       let newIndex = 0;
 
       do {
-        newIndex = Math.floor(Math.random() * 24);
+        newIndex = Math.floor(Math.random() * (images.length * 2));
       } while (this.memos[newIndex] !== undefined);
 
       this.memos[newIndex] = {
@@ -82,7 +104,7 @@ export class MemoComponent implements OnInit {
       };
 
       do {
-        newIndex = Math.floor(Math.random() * 24);
+        newIndex = Math.floor(Math.random() * (images.length * 2));
       } while (this.memos[newIndex] !== undefined);
 
       this.memos[newIndex] = {
